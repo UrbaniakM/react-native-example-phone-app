@@ -1,13 +1,7 @@
 import * as React from 'react';
-import {
-  Text,
-  View,
-  StatusBar,
-  SafeAreaView,
-  StyleSheet,
-  Image,
-} from 'react-native';
+import {Text, View, StatusBar, StyleSheet, Image} from 'react-native';
 import appLogo from '../../public/app_logo.png';
+import {SafeAreaView} from 'react-native-safe-area-context';
 
 export interface AppBarProps {
   title?: string;
