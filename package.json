@@ -34,10 +34,12 @@
     "@typescript-eslint/parser": "^2.27.0",
     "babel-jest": "^25.1.0",
     "eslint": "^6.5.1",
+    "husky": "^4.2.5",
     "jest": "^25.1.0",
     "metro-react-native-babel-preset": "^0.59.0",
     "react-test-renderer": "16.13.1",
     "prettier": "^2.0.4",
+    "pretty-quick": "^2.0.1",
     "typescript": "^3.8.3"
   },
   "jest": {
@@ -50,5 +52,10 @@
       "json",
       "node"
     ]
+  },
+  "husky": {
+    "hooks": {
+      "pre-commit": "pretty-quick --staged"
+    }
   }
 }
