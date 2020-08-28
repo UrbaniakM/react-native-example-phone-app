@@ -3,11 +3,13 @@ import * as React from 'react';
 export interface User {
   isLoggedIn: boolean;
   isLoading: boolean;
+  isTermsOfServiceAccepted: boolean | null;
 }
 
 const defaultState: User = {
   isLoggedIn: false,
   isLoading: true,
+  isTermsOfServiceAccepted: null,
 };
 
 export const UserContext = React.createContext<User>(defaultState);
@@ -20,6 +22,9 @@ export const UserLoggedInContext = React.createContext<User['isLoggedIn']>(
 export const UserLoadingContext = React.createContext<User['isLoading']>(
   defaultState.isLoading,
 );
+export const UserTermsOfServiceAcceptedContext = React.createContext<
+  User['isTermsOfServiceAccepted']
+>(defaultState.isTermsOfServiceAccepted);
 
 export const UserProvider: React.FC = ({children}) => {
   const [user, setUser] = React.useState<User>(defaultState);
@@ -29,7 +34,10 @@ export const UserProvider: React.FC = ({children}) => {
       <UserContext.Provider value={user}>
         <UserLoadingContext.Provider value={user.isLoading}>
           <UserLoggedInContext.Provider value={user.isLoggedIn}>
-            {children}
+            <UserTermsOfServiceAcceptedContext.Provider
+              value={user.isTermsOfServiceAccepted}>
+              {children}
+            </UserTermsOfServiceAcceptedContext.Provider>
           </UserLoggedInContext.Provider>
         </UserLoadingContext.Provider>
       </UserContext.Provider>
