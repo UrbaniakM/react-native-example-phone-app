@@ -26,8 +26,8 @@ export const AppBar: React.FC<AppBarProps> = ({title}) => {
   );
 };
 
-const useStyles = (insets: EdgeInsets) => {
-  return StyleSheet.create({
+const useStyles = (insets: EdgeInsets) =>
+  StyleSheet.create({
     container: {
       backgroundColor: '#19d9fd',
       paddingTop: Math.max(insets.top, 8),
@@ -56,4 +56,3 @@ const useStyles = (insets: EdgeInsets) => {
       marginLeft: 24,
     },
   });
-};
