@@ -1,5 +1,5 @@
 import * as React from 'react';
-import {BottomNavigation} from './components/BottomNavigation';
+import {UserAcceptedNavContainer} from './pages/UserAcceptedNavContainer';
 import {TermsOfService} from './pages/TermsOfService';
 import {useUserAcceptedTermsOfService} from './user';
 import {useInitializeUserData} from './utils/useInitializeData';
@@ -27,7 +27,7 @@ export const Main: React.FC = () => {
         <>
           {userAcceptedTermsOfService && (
             <AppStack.Screen
-              component={BottomNavigation}
+              component={UserAcceptedNavContainer}
               name="Accepted tems"
             />
           )}

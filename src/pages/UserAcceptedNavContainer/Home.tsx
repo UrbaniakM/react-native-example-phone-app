@@ -2,14 +2,14 @@ import * as React from 'react';
 
 import {ScrollView, Text} from 'react-native';
 
-import {AppBar} from '../components/AppBar';
+import {AppBar} from '../../components/AppBar';
 
-export const Profile: React.FC = () => {
+export const Home: React.FC = () => {
   return (
     <>
-      <AppBar title="Profile" />
+      <AppBar title="Home" />
       <ScrollView>
-        <Text>Profile</Text>
+        <Text>Home</Text>
       </ScrollView>
     </>
   );
