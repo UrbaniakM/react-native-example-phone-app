@@ -4,7 +4,7 @@ import {ScrollView, View, Text, StyleSheet} from 'react-native';
 
 import {Button} from 'react-native-elements';
 import {AppBar} from '../components/AppBar';
-import {useUpdateUser} from '../user';
+import {useUpdateUser, User} from '../user';
 import {persistIsTermsOfServiceAccepted} from '../utils/termsOfService';
 
 export const TermsOfService: React.FC = () => {
@@ -13,10 +13,13 @@ export const TermsOfService: React.FC = () => {
   const handleAcceptTermsOfService = React.useCallback(() => {
     // TODO loading - block button
     persistIsTermsOfServiceAccepted(true);
-    updateUser((user) => ({
-      ...user,
-      isTermsOfServiceAccepted: true,
-    }));
+    updateUser((user) => {
+      const updatedUser: User = {
+        ...user,
+        isTermsOfServiceAccepted: true,
+      };
+      return updatedUser;
+    });
   }, [updateUser]);
 
   return (
