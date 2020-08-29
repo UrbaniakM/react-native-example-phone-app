@@ -2,9 +2,9 @@ import * as React from 'react';
 
 import {ScrollView, Text} from 'react-native';
 
-import {AppBar} from '../../components/AppBar';
+import {AppBar} from '../../../components/AppBar';
 
-export const Profile: React.FC = () => {
+export const ProfileLoggedIn: React.FC = () => {
   return (
     <>
       <AppBar title="Profile" />
