@@ -15,7 +15,7 @@ export const TermsOfService: React.FC = () => {
     persistIsTermsOfServiceAccepted(true);
     updateUser((user) => ({
       ...user,
-      isAccepted: true,
+      isTermsOfServiceAccepted: true,
     }));
   }, [updateUser]);
 
