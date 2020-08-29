@@ -15,7 +15,7 @@ const defaultState: User = {
 export const UserContext = React.createContext<User>(defaultState);
 export const UserUpdateContext = React.createContext<
   React.Dispatch<React.SetStateAction<User>>
->(() => void 0);
+>(() => undefined);
 export const UserLoggedInContext = React.createContext<User['isLoggedIn']>(
   defaultState.isLoggedIn,
 );
