@@ -15,14 +15,12 @@ export const AppBar: React.FC<AppBarProps> = ({title}) => {
     <>
       <StatusBar hidden />
       <View style={[styles.container, styles.containerShadow]}>
-        <View style={styles.content}>
-          <Image style={styles.logo} source={appLogo} />
-          {title && (
-            <View style={styles.title}>
-              <Text>{title}</Text>
-            </View>
-          )}
-        </View>
+        <Image style={styles.logo} source={appLogo} />
+        {title && (
+          <View style={styles.title}>
+            <Text>{title}</Text>
+          </View>
+        )}
       </View>
     </>
   );
@@ -32,9 +30,12 @@ const useStyles = (insets: EdgeInsets) => {
   return StyleSheet.create({
     container: {
       backgroundColor: '#19d9fd',
-      paddingTop: insets.top,
+      paddingTop: Math.max(insets.top, 8),
+      paddingBottom: 8,
       paddingLeft: insets.left,
       paddingRight: insets.right,
+      flexDirection: 'row',
+      alignItems: 'center',
     },
     containerShadow: {
       shadowColor: '#000',
@@ -44,10 +45,6 @@ const useStyles = (insets: EdgeInsets) => {
       elevation: 4,
       // TODO: 3rd party library (color of the shadows)
       // https://stackoverflow.com/questions/41320131/how-to-set-shadows-in-react-native-for-android#comment86368663_41457692
-    },
-    content: {
-      flexDirection: 'row',
-      alignItems: 'center',
     },
     logo: {
       width: 142,
