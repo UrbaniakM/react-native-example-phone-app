@@ -7,7 +7,14 @@ import * as React from 'react';
 // so we're using react-native-storybook-loader package
 configure(loadStories, module);
 
-const StorybookUI = getStorybookUI({port: 7007, host: 'localhost'});
+const StorybookUI = getStorybookUI({
+  port: 7007,
+  host: 'localhost',
+  asyncStorage:
+    require('@react-native-community/async-storage').default ||
+    require('react-native').AsyncStorage ||
+    null,
+});
 
 // RN hot module must be in a class for HMR
 class StorybookUIRoot extends React.Component {
