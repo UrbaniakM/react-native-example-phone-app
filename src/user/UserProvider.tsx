@@ -3,10 +3,12 @@ import * as React from 'react';
 export interface User {
   isLoggedIn: boolean;
   isLoading: boolean;
+  nickname: string | null;
   isTermsOfServiceAccepted: boolean | null;
 }
 
 const defaultState: User = {
+  nickname: null,
   isLoggedIn: false,
   isLoading: true,
   isTermsOfServiceAccepted: null,
@@ -22,6 +24,9 @@ export const UserLoggedInContext = React.createContext<User['isLoggedIn']>(
 export const UserLoadingContext = React.createContext<User['isLoading']>(
   defaultState.isLoading,
 );
+export const UserNicknameContext = React.createContext<User['nickname']>(
+  defaultState.nickname,
+);
 export const UserTermsOfServiceAcceptedContext = React.createContext<
   User['isTermsOfServiceAccepted']
 >(defaultState.isTermsOfServiceAccepted);
@@ -34,10 +39,12 @@ export const UserProvider: React.FC = ({children}) => {
       <UserContext.Provider value={user}>
         <UserLoadingContext.Provider value={user.isLoading}>
           <UserLoggedInContext.Provider value={user.isLoggedIn}>
-            <UserTermsOfServiceAcceptedContext.Provider
-              value={user.isTermsOfServiceAccepted}>
-              {children}
-            </UserTermsOfServiceAcceptedContext.Provider>
+            <UserNicknameContext.Provider value={user.nickname}>
+              <UserTermsOfServiceAcceptedContext.Provider
+                value={user.isTermsOfServiceAccepted}>
+                {children}
+              </UserTermsOfServiceAcceptedContext.Provider>
+            </UserNicknameContext.Provider>
           </UserLoggedInContext.Provider>
         </UserLoadingContext.Provider>
       </UserContext.Provider>
