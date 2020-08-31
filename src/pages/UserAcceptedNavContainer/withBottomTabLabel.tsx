@@ -31,7 +31,7 @@ const styles = StyleSheet.create({
   // center label with icon
   labelBeside: {
     fontSize: 10,
-    marginTop: 3,
+    marginLeft: -2,
   },
 });
 
