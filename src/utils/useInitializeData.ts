@@ -12,6 +12,7 @@ export const useInitializeUserData = () => {
         const updatedUser: User = {
           ...user,
           isTermsOfServiceAccepted: isAccepted,
+          isLoading: false,
         };
         return updatedUser;
       });
