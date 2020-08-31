@@ -3,9 +3,9 @@ import * as React from 'react';
 import {ScrollView, View, Text, StyleSheet} from 'react-native';
 
 import {Button} from 'react-native-elements';
-import {AppBar} from '../components/AppBar';
-import {useUpdateUser, User} from '../user';
-import {persistIsTermsOfServiceAccepted} from '../utils/termsOfService';
+import {AppBar} from 'components/AppBar';
+import {useUpdateUser, User} from 'user';
+import {persistIsTermsOfServiceAccepted} from 'utils/termsOfService';
 
 export const TermsOfService: React.FC = () => {
   const updateUser = useUpdateUser();

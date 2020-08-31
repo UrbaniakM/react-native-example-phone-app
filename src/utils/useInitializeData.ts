@@ -1,5 +1,5 @@
 import * as React from 'react';
-import {useUpdateUser, User} from '../user';
+import {useUpdateUser, User} from 'user';
 import {getPersistedIsTermsOfServiceAccepted} from './termsOfService';
 
 // TODO: user session check
