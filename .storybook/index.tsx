@@ -5,7 +5,7 @@ import * as React from 'react';
 
 // React Native packager resolves all imports at build-time, so it’s not possible to load modules dynamically
 // so we're using react-native-storybook-loader package
-configure(loadStories(), module);
+configure(loadStories, module);
 
 const StorybookUI = getStorybookUI({port: 7007, host: 'localhost'});
 
