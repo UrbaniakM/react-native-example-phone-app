@@ -2,9 +2,9 @@ import * as React from 'react';
 import {createBottomTabNavigator} from '@react-navigation/bottom-tabs';
 import {Home} from './Home';
 import {Profile} from './Profile';
-import {StyleSheet, Text} from 'react-native';
 import MaterialIcon from 'react-native-vector-icons/MaterialIcons';
 import MaterialCommunityIcon from 'react-native-vector-icons/MaterialCommunityIcons';
+import {withBottomTabLabel} from './withBottomTabLabel';
 
 const Tab = createBottomTabNavigator();
 
@@ -12,17 +12,6 @@ interface TabBarLabelProps {
   focused: boolean;
   color: string;
 }
-const label = 'Product Databases';
-const TabBarLabel: React.FC<TabBarLabelProps> = ({color}) => {
-  return (
-    <Text
-      numberOfLines={2}
-      style={[styles.label, {color}, styles.labelBeside]}
-      allowFontScaling>
-      {label}
-    </Text>
-  );
-};
 
 export const UserAcceptedNavContainer: React.FC = () => {
   return (
@@ -31,6 +20,7 @@ export const UserAcceptedNavContainer: React.FC = () => {
         name="Home"
         component={Home}
         options={{
+          tabBarLabel: withBottomTabLabel('Home'),
           tabBarIcon: ({
             color,
             size,
@@ -45,6 +35,7 @@ export const UserAcceptedNavContainer: React.FC = () => {
         name="Information"
         component={Home}
         options={{
+          tabBarLabel: withBottomTabLabel('Information'),
           tabBarIcon: ({
             color,
             size,
@@ -59,7 +50,7 @@ export const UserAcceptedNavContainer: React.FC = () => {
         name="Product Databases"
         component={Home}
         options={{
-          tabBarLabel: TabBarLabel,
+          tabBarLabel: withBottomTabLabel('Product Databases'),
           tabBarIcon: ({
             color,
             size,
@@ -76,6 +67,7 @@ export const UserAcceptedNavContainer: React.FC = () => {
         name="Profile"
         component={Profile}
         options={{
+          tabBarLabel: withBottomTabLabel('Profile'),
           tabBarIcon: ({
             color,
             size,
@@ -89,15 +81,3 @@ export const UserAcceptedNavContainer: React.FC = () => {
     </Tab.Navigator>
   );
 };
-
-const styles = StyleSheet.create({
-  label: {
-    textAlign: 'center',
-    backgroundColor: 'transparent',
-  },
-  // center label with icon
-  labelBeside: {
-    fontSize: 10,
-    marginTop: 3,
-  },
-});
