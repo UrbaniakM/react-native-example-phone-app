@@ -23,6 +23,7 @@ const TabBarLabel: React.FC<TabBarLabelProps> = ({label, color}) => {
   );
 };
 
+// FIXME: Rotated view placement
 const styles = StyleSheet.create({
   label: {
     textAlign: 'center',
