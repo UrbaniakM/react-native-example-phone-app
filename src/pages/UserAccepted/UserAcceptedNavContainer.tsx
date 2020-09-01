@@ -1,6 +1,6 @@
 import * as React from 'react';
 import {createBottomTabNavigator} from '@react-navigation/bottom-tabs';
-import {Home, Profile} from './UserAcceptedScreens';
+import {Home, Profile, Charts} from './UserAcceptedScreens';
 import MaterialIcon from 'react-native-vector-icons/MaterialIcons';
 import MaterialCommunityIcon from 'react-native-vector-icons/MaterialCommunityIcons';
 import {withBottomTabLabel} from './withBottomTabLabel';
@@ -20,10 +20,10 @@ export const UserAcceptedNavContainer: React.FC = () => {
         }}
       />
       <Tab.Screen
-        name="Information"
-        component={Home}
+        name="Charts"
+        component={Charts}
         options={{
-          tabBarLabel: withBottomTabLabel('Information'),
+          tabBarLabel: withBottomTabLabel('Charts'),
           tabBarIcon: withBottomTabIcon(MaterialIcon, 'info-outline'),
         }}
       />
