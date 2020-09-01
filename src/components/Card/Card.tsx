@@ -6,8 +6,8 @@ export interface CardProps {
 }
 export const Card: React.FC<CardProps> = ({children, style}) => {
   return (
-    <View style={[styles.border, styles.rounded, style]}>
-      <View style={styles.content}>{children}</View>
+    <View style={[styles.border, styles.rounded, styles.contentPadding, style]}>
+      {children}
     </View>
   );
 };
@@ -21,7 +21,7 @@ const styles = StyleSheet.create({
   rounded: {
     borderRadius: 4,
   },
-  content: {
-    margin: 8,
+  contentPadding: {
+    padding: 16,
   },
 });
