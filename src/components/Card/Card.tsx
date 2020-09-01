@@ -1,8 +1,9 @@
 import * as React from 'react';
 import {View, StyleSheet, StyleProp, ViewStyle} from 'react-native';
 
+export type CardStyle = ViewStyle;
 export interface CardProps {
-  style?: StyleProp<ViewStyle>;
+  style?: StyleProp<CardStyle>;
 }
 export const Card: React.FC<CardProps> = ({children, style}) => {
   return (
