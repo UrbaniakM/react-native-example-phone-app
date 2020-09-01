@@ -1,7 +1,8 @@
+/* eslint-disable react-native/no-inline-styles */
 import * as React from 'react';
 import {storiesOf} from '@storybook/react-native';
 import {Chart} from './Chart';
-import {View} from 'react-native';
+import {ScrollView} from 'react-native-gesture-handler';
 
 const chartDefault = () => (
   <Chart
@@ -11,24 +12,19 @@ const chartDefault = () => (
   />
 );
 
-// FIXME: isn't working properly (issue probably related to WebView)
 const multipleCharts = () => (
-  <View>
-    <View>
-      <Chart
-        url={
-          'https://public.tableau.com/views/10_0InternationalTourism/InternationalTourism?:embed=y&:tooltip=n&:toolbar=n&:showVizHome=no&:mobile=y&:showAppBanner=n'
-        }
-      />
-    </View>
-    <View>
-      <Chart
-        url={
-          'https://public.tableau.com/profile/alexander.aj.wray#!/vizhome/MarchMadnessTournamentHistory/Dashboard'
-        }
-      />
-    </View>
-  </View>
+  <ScrollView contentContainerStyle={{flexGrow: 1, padding: 32}}>
+    <Chart
+      url={
+        'https://public.tableau.com/views/10_0InternationalTourism/InternationalTourism?:embed=y&:tooltip=n&:toolbar=n&:showVizHome=no&:mobile=y&:showAppBanner=n'
+      }
+    />
+    <Chart
+      url={
+        'https://public.tableau.com/profile/alexander.aj.wray#!/vizhome/MarchMadnessTournamentHistory/Dashboard'
+      }
+    />
+  </ScrollView>
 );
 
 storiesOf('Chart', module)
