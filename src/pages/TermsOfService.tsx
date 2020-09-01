@@ -25,7 +25,7 @@ export const TermsOfService: React.FC = () => {
   return (
     <>
       <AppBar title="Terms and conditions" />
-      <ScrollView style={styles.pageContainer}>
+      <ScrollView contentContainerStyle={styles.pageContainer}>
         <View style={styles.sectionContainer}>
           <Text style={styles.sectionTitle}>
             In order to use the application you have to accept terms and
