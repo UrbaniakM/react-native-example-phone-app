@@ -5,13 +5,9 @@ import {Profile} from './Profile';
 import MaterialIcon from 'react-native-vector-icons/MaterialIcons';
 import MaterialCommunityIcon from 'react-native-vector-icons/MaterialCommunityIcons';
 import {withBottomTabLabel} from './withBottomTabLabel';
+import {withBottomTabIcon} from './withBottomTabIcon';
 
 const Tab = createBottomTabNavigator();
-
-interface TabBarLabelProps {
-  focused: boolean;
-  color: string;
-}
 
 export const UserAcceptedNavContainer: React.FC = () => {
   return (
@@ -21,14 +17,7 @@ export const UserAcceptedNavContainer: React.FC = () => {
         component={Home}
         options={{
           tabBarLabel: withBottomTabLabel('Home'),
-          tabBarIcon: ({
-            color,
-            size,
-          }: {
-            focused: boolean;
-            color: string;
-            size: number;
-          }) => <MaterialIcon name="home" color={color} size={size} />,
+          tabBarIcon: withBottomTabIcon(MaterialIcon, 'home'),
         }}
       />
       <Tab.Screen
@@ -36,14 +25,7 @@ export const UserAcceptedNavContainer: React.FC = () => {
         component={Home}
         options={{
           tabBarLabel: withBottomTabLabel('Information'),
-          tabBarIcon: ({
-            color,
-            size,
-          }: {
-            focused: boolean;
-            color: string;
-            size: number;
-          }) => <MaterialIcon name="info-outline" color={color} size={size} />,
+          tabBarIcon: withBottomTabIcon(MaterialIcon, 'info-outline'),
         }}
       />
       <Tab.Screen
@@ -51,16 +33,7 @@ export const UserAcceptedNavContainer: React.FC = () => {
         component={Home}
         options={{
           tabBarLabel: withBottomTabLabel('Product Databases'),
-          tabBarIcon: ({
-            color,
-            size,
-          }: {
-            focused: boolean;
-            color: string;
-            size: number;
-          }) => (
-            <MaterialCommunityIcon name="database" color={color} size={size} />
-          ),
+          tabBarIcon: withBottomTabIcon(MaterialCommunityIcon, 'database'),
         }}
       />
       <Tab.Screen
@@ -68,14 +41,7 @@ export const UserAcceptedNavContainer: React.FC = () => {
         component={Profile}
         options={{
           tabBarLabel: withBottomTabLabel('Profile'),
-          tabBarIcon: ({
-            color,
-            size,
-          }: {
-            focused: boolean;
-            color: string;
-            size: number;
-          }) => <MaterialIcon name="home" color={color} size={size} />,
+          tabBarIcon: withBottomTabIcon(MaterialCommunityIcon, 'account'),
         }}
       />
     </Tab.Navigator>
