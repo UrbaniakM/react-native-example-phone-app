@@ -1,5 +1,5 @@
 import * as React from 'react';
-import {UserAcceptedNavContainer} from './pages/UserAcceptedNavContainer';
+import {UserAcceptedNavContainer} from './pages/UserAccepted';
 import {TermsOfService} from './pages/TermsOfService';
 import {useUserAcceptedTermsOfService, useUserLoading} from './user';
 import {useInitializeUserData} from './utils/useInitializeData';
